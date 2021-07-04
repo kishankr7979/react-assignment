@@ -4,6 +4,10 @@
 ---
 WebApp -> [Leaderboard](https://leaderboard-react.netlify.app/)
 <br>
+### Screenshot
+<br>
+![Screenshot 2021-07-05 at 2 10 19 AM](https://user-images.githubusercontent.com/41482800/124399022-7f617d00-dd36-11eb-946e-83e88965c7cf.png)
+
 
 Technologies
 1.  React
