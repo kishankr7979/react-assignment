@@ -1,28 +1,74 @@
-// Total Users list
-var Users = [
-    { name: 'Edward', score: 1, avatar:'\u{1F638}'},
-    { name: 'Sharpe', score: 7, avatar: '\u{1F639}'},
-    { name: 'Rishav', score: 45, avatar: '\u{1F637}'},
-    { name: 'Kishan', score: 12 , avatar: '\u{1F984}'},
-    { name: 'Ashutosh', score: 13 , avatar: '\u{1F631}'},
-    { name: 'Hariom', score: 37, avatar: '\u{1F632}'},
-    { name: 'Tarun', score: 12 , avatar: '\u{1F633}'},
-    { name: 'Uday', score: 53 , avatar: '\u{1F633}'},
-    { name: 'Shashwat', score: 47, avatar: '\u{1F634}'}, 
-    { name: 'Vidhan', score: 9 , avatar: '\u{1F627}'},
-    { name: 'Sameer', score: 0 , avatar: '\u{1F641}'},
-    { name: 'Rivya', score: 27, avatar: '\u{1F984}'}
-  ];
-  // Sorting based on Scores
-  Users.sort((a,b) => {
-      return b.score - a.score;
-  })
+var players = {
+	player1: {
+		name: "Uday",
+        score: 257,
+        avatar:'\u{1f466}'
+	},
+	player2: {
+		name: "Ummaid",
+        score: 210,
+        avatar:'\u{1f466}'
+	},
+	player3: {
+		name: "Shashwat",
+        score: 300,
+        avatar:'\u{1f465}'
+	},
+	player4: {
+		name: "Tarun",
+        score: 319,
+        avatar:'\u{1f470}'
+	},
+	player5: {
+		name: "Kishan",
+        score: 962,
+        avatar:'\u{1f468}'
+    },
+    player6: {
+		name: "Sameer",
+        score: 469,
+        avatar:'\u{1f468}'
+    },
+    player7: {
+		name: "Rishav",
+        score: 521,
+        avatar:'\u{1f466}'
+    },
+    player8: {
+		name: "Ashutosh",
+        score: 28,
+        avatar:'\u{1f466}'
+    },
+    player9: {
+		name: "Rivya",
+        score: 32,
+        avatar:'\u{1f466}'
+	}
+};
 
-  let n = 5; // number of Top Scorer 
-  let arr = []; // empty list inorder to serve top scorer
-  for(let i=0; i<n; i++){
-      arr.push(Users[i]);
+var array = [];
+
+for (var key in players) {
+	array.push(players[key]);
   
 }
+
+array.sort(function(a, b){
+    return b.score - a.score;
+});
+
+var rank = 1;
+for (var i = 0; i < array.length; i++) {
+  if (i > 0 && array[i].score < array[i - 1].score) {
+  	rank++;
+  }
+	array[i].rank = rank;
+}
+let arr = [];
+let n = 5;
+for(let i=0; i<n; i++){
+    arr.push(array[i]);
+
+}
+export default arr
 console.log(arr);
- export default arr;
